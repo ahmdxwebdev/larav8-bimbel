@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="" class="form-label">Keterangan</label>
-                                        <textarea name="desc" class="form-control @error('desc') is-invalid @enderror" autofocus  >{{ old('desc', $edulevels->desc ) }}</textarea>
+                                        <textarea name="desc" class="form-control @error('desc') is-invalid @enderror" >{{ old('desc', $edulevels->desc)}}</textarea>
                                         @error('desc') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
                                     <button type="submit" class="btn btn-success">Save</button>

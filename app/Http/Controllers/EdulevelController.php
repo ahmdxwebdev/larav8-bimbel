@@ -25,6 +25,12 @@ class EdulevelController extends Controller
         $request->validate([
             'name' => 'required | min: 2',
             'desc' => 'required | min: 2'
+        ],[
+            'name.required' => 'Nama jenjang tidak boleh kosong',
+            'name.min' => 'name harus di isi melebihi 2 karakter',
+            'desc.required' => 'Keterangan tidak boleh kosong',
+            'desc.min' => 'Keterangan harus di isi lebih dari 2 karakter'
+
         ]);
 
         DB::table('edulevels')->insert(
@@ -46,6 +52,11 @@ class EdulevelController extends Controller
         $request->validate([
             'name' => 'required | min: 2',
             'desc' => 'required | min: 2'
+        ], [
+            'name.required' => 'Nama jenjang tidak boleh kosong',
+            'name.min' => 'Nama jenjang harus di isi lebih dari 2 karakter',
+            'desc.required' => 'Keterangan tidak boleh kosong',
+            'desc.min' => 'Keterangan harus di isi lebih dari 2 karakter'
         ]);
 
         DB::table('edulevels')->where('id', $id)->update([
